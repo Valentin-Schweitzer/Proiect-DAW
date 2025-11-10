@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Online</title>
+  <link rel="icon" type="image/png" href="Poze/open-book-2.svg" />
+  <link rel="stylesheet" href="arhitectura.css" />
+  <script defer src="arhitectura.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="Poze/open-book-2.svg" alt="" class="brand-mark" />
+      <a class="brand-name" href="home.html">Biblioteca Online</a>
+    </div>
+    <nav class="site-nav" aria-label="Navigare principală">
+      <a href="arhitectura.html" class="active">Arhitectura</a>
+      <a href="implementare.html">Soluții de implementare</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Descrierea bazei de date ===== -->
+    <section class="db-section" id="descriere">
+        <div class="container">
+            <h2>Descrierea bazei de date</h2>
+
+            <p>
+            Baza de date <strong>„Biblioteca Online”</strong> susține funcționarea unei platforme moderne dedicate gestionării
+            unei biblioteci publice digitalizate. Aceasta facilitează accesul rapid și ușor la resurse educaționale variate –
+            cărți, articole, reviste și alte documente – disponibile atât în format fizic, cât și digital.
+            </p>
+
+            <p>
+            Modelul de date este conceput pentru a acoperi integral activitățile specifice unei biblioteci moderne:
+            gestionarea utilizatorilor, a documentelor, a împrumuturilor și rezervărilor, precum și promovarea interacțiunii
+            culturale prin recenzii și evenimente.
+            </p>
+
+            <p>
+            Platforma se bazează pe existența unei rețele de filiale care dețin atât documente fizice, cât și acces la resurse
+            digitale. Utilizatorii își pot crea un cont personal, autentificându-se ulterior pentru a putea împrumuta
+            documente, a redacta recenzii, a comunica cu bibliotecarii sau a participa la evenimente organizate de bibliotecă.
+            </p>
+
+            <p>
+            În cadrul sistemului, <strong>documentele</strong> reprezintă entități centrale. Acestea pot aparține uneia sau mai
+            multor <strong>categorii tematice</strong> (literatură, știință, istorie etc.), pot avea <strong>mai mulți autori</strong> și o
+            <strong>editură asociată</strong>. Fiecare document poate exista doar în format digital, doar în format fizic sau în
+            ambele formate.
+            </p>
+
+            <p>
+            Pentru documentele fizice se înregistrează exemplarul și filiala unde este disponibil, iar pentru cele digitale se
+            stabilește o perioadă limitată de acces în cazul împrumuturilor electronice.
+            </p>
+
+            <p>
+            Prin acest model, aplicația <strong>„Biblioteca Online”</strong> modernizează activitatea bibliotecilor publice și
+            oferă utilizatorilor o experiență completă de explorare, rezervare și împrumut, adaptată cerințelor erei digitale.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ===== Rolurile identificate ===== -->
+    <section class="db-section roles" id="roluri">
+        <div class="container">
+            <h2>Rolurile identificate</h2>
+        </div>
+            
+        
+        <div class="role-grid">
+            <!-- Cititor -->
+            <article class="role-card">
+                <h3>Cititori</h3>
+                <p>
+                Cititorii reprezintă principalii beneficiari ai platformei, având acces la
+                funcționalitățile destinate explorării și utilizării colecțiilor bibliotecii.
+                </p>
+                <p>Acestea pot:</p>
+                <ul>
+                <li>Crea un cont personal și se pot autentifica în sistem;</li>
+                <li>Căuta și vizualiza informații despre documente (cărți, reviste, articole etc.);</li>
+                <li>Rezerva documente disponibile în format fizic sau digital;</li>
+                <li>Descărca documente digitale (în limita drepturilor disponibile);</li>
+                <li>Vizualiza istoricul împrumuturilor și eventualele penalizări;</li>
+                <li>Scrie recenzii și gestiona liste de lectură personalizate;</li>
+                <li>Participa la evenimente culturale organizate de bibliotecă.</li>
+                </ul>
+            </article>
+
+            <!-- Bibliotecar -->
+            <article class="role-card">
+                <h3>Bibliotecari</h3>
+                <p>
+                Bibliotecarii sunt responsabili cu gestionarea resurselor și interacțiunea cu utilizatorii,
+                asigurând buna funcționare a proceselor interne.
+                </p>
+                <p>Acestea pot:</p>
+                <ul>
+                <li>Administra colecțiile de documente (adăugare, modificare, ștergere);</li>
+                <li>Confirma, respinge sau actualiza rezervările realizate de cititori;</li>
+                <li>Înregistra împrumuturi și returnări de documente;</li>
+                <li>Gestiona sesizările și solicitările primite de la utilizatori;</li>
+                <li>Valida conturile cititorilor și monitoriza respectarea regulilor de utilizare.</li>
+                </ul>
+            </article>
+
+            <!-- Administrator -->
+            <article class="role-card">
+                <h3>Administratori</h3>
+                <p>
+                Administratorii coordonează întregul sistem informatic, având acces complet asupra datelor
+                și setărilor aplicației.
+                </p>
+                <p>Responsabilitățile lor includ:</p>
+                <ul>
+                <li>Crearea, modificarea și ștergerea conturilor de bibliotecari și cititori;</li>
+                <li>Configurarea setărilor generale ale platformei (politici de împrumut, durate, penalizări etc.);</li>
+                <li>Supravegherea bazei de date și a activității utilizatorilor;</li>
+                <li>Generarea rapoartelor privind activitatea bibliotecii și utilizarea resurselor;</li>
+                <li>Asigurarea securității și integrității datelor gestionate în sistem.</li>
+                </ul>
+            </article>
+        </div>
+        
+    </section>
+
+
+    <!-- ===== Entitățile ===== -->
+    <section class="db-section" id="entitati">
+    <div class="container">
+        <h2>Entitățile</h2>
+        <p>
+        Modelul „<strong>Biblioteca Online</strong>” include un set de entități
+        care definesc structura de bază a sistemului — de la utilizatori și documente,
+        până la liste, recenzii și rezervări. În continuare sunt prezentate principalele
+        entități și cheia lor primară.
+        </p>
+
+        <div class="entity-grid">
+        <article class="entity-card">
+            <h3>UTILIZATOR</h3>
+            <p>Reprezintă orice persoană care accesează platforma (cititor, bibliotecar sau administrator).</p>
+            <p class="key">Cheie primară: <code>id_utilizator</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>ADMINISTRATOR</h3>
+            <p>Subentitate a UTILIZATOR, include utilizatori cu drepturi extinse: pot gestiona conturi, filiale și rapoarte.</p>
+            <p class="key">Cheie primară: <code>id_administrator</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>CITITOR</h3>
+            <p>Subentitate a UTILIZATOR — poate împrumuta documente, scrie recenzii și crea liste de lectură.</p>
+            <p class="key">Cheie primară: <code>id_cititor</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>BIBLIOTECAR</h3>
+            <p>Subentitate a UTILIZATOR — gestionează documente, validează conturi și răspunde la sesizări.</p>
+            <p class="key">Cheie primară: <code>id_bibliotecar</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>AUTOR</h3>
+            <p>Persoanele care au redactat conținutul documentelor (cărți, reviste, articole).</p>
+            <p class="key">Cheie primară: <code>id_autor</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>DOCUMENT</h3>
+            <p>Materiale disponibile în bibliotecă — fizice sau digitale. Pot avea mai mulți autori și aparțin unei edituri.</p>
+            <p class="key">Cheie primară: <code>id_document</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>EDITURA</h3>
+            <p>Definirea editurilor care publică documente, incluzând adresa și site-ul asociat.</p>
+            <p class="key">Cheie primară: <code>id_editura</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>CATEGORIE</h3>
+            <p>Gruparea documentelor după tematică (literatură, știință etc.).</p>
+            <p class="key">Cheie primară: <code>id_categorie</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>FILIALA</h3>
+            <p>Locație fizică a bibliotecii cu program propriu și documente disponibile.</p>
+            <p class="key">Cheie primară: <code>id_filiala</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>IMPRUMUT_DIGITAL</h3>
+            <p>Împrumut temporar al unui document digital, asociat unui utilizator și unui document.</p>
+            <p class="key">Cheie primară: <code>id_imprumut</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>REZERVARE</h3>
+            <p>Cerere pentru un document fizic, inițiată de un utilizator, pentru o anumită perioadă.</p>
+            <p class="key">Cheie primară: <code>id_rezervare</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>RECENZIE</h3>
+            <p>Opinia scrisă de un cititor despre un document, cu text, evaluare și dată.</p>
+            <p class="key">Cheie primară: <code>id_recenzie</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>LISTA_LECTURA</h3>
+            <p>Colecție personalizată de documente salvate de un utilizator (cu titlu și descriere).</p>
+            <p class="key">Cheie primară: <code>id_lista</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>DOC_DE_CITIT</h3>
+            <p>Relație m:n între LISTA_LECTURA și DOCUMENT. Indică documentele dintr-o listă de lectură.</p>
+            <p class="key">Cheie primară compusă: <code>(id_lista, id_document)</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>EVENIMENT</h3>
+            <p>Gestionează participarea cititorilor și bibliotecarilor la evenimente din filiale.</p>
+            <p class="key">Cheie primară compusă: <code>(id_filiala, id_cititor, id_bibliotecar)</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>CLASIFICARE</h3>
+            <p>Asociază documentele cu categoriile tematice (relație m:n între DOCUMENT și CATEGORIE).</p>
+            <p class="key">Cheie primară compusă: <code>(id_document, id_categorie)</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>EXEMPLAR_FIZIC</h3>
+            <p>Ține evidența exemplarelor fizice ale documentelor, rezervate într-o filială.</p>
+            <p class="key">Cheie primară compusă: <code>(id_rezervare, id_document, id_filiala)</code></p>
+        </article>
+
+        <article class="entity-card">
+            <h3>ISTORIC_REDACTIE</h3>
+            <p>Relație m:n între AUTOR și DOCUMENT, indicând contribuțiile fiecărui autor.</p>
+            <p class="key">Cheie primară compusă: <code>(id_autor, id_document)</code></p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- ===== Relațiile ===== -->
+    <section class="db-section" id="relatii">
+        <div class="container">
+            <h2>Relațiile</h2>
+            <p>
+            Mai jos sunt relațiile principale din modelul <strong>Biblioteca Online</strong>,
+            împreună cu descrierea și cardinalitatea minimă/maximă. (Sinteză din documentul proiectului.) <!-- :contentReference[oaicite:1]{index=1} -->
+            </p>
+        </div>
+        
+        <div class="relation-list">
+        <!-- 1 -->
+        <article class="relation-card">
+            <h3>UTILIZATOR ⟷ RECENZIE <small>(UTILIZATOR_scrie_RECENZIE)</small></h3>
+            <p>Ce recenzii a scris un anumit utilizator.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 2 -->
+        <article class="relation-card">
+            <h3>UTILIZATOR ⟷ LISTA_LECTURA <small>(UTILIZATOR_are_LISTA_LECTURA)</small></h3>
+            <p>Listele de lectură create de un utilizator.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 3 (ternară) -->
+        <article class="relation-card rel-ternara">
+            <h3>CITITOR ⟷ BIBLIOTECAR ⟷ FILIALA <small>(CITITOR_se_întâlnește_cu_BIBLIOTECAR_la_FILIALA)</small></h3>
+            <p>Participări/întâlniri la evenimente în filiale.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> M : M : M</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="relation-card">
+            <h3>CITITOR ⟷ IMPRUMUT_DIGITAL <small>(CITITOR_împrumută_IMPRUMUT_DIGITAL)</small></h3>
+            <p>Împrumuturile digitale ale unui cititor.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="relation-card">
+            <h3>CITITOR ⟷ REZERVARE <small>(CITITOR_rezervă_REZERVARE)</small></h3>
+            <p>Rezervările de documente fizice făcute de un cititor.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="relation-card">
+            <h3>AUTOR ⟷ DOCUMENT <small>(AUTOR_redactează_DOCUMENT)</small></h3>
+            <p>Documentele redactate de un autor / coautori ai unui document.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:1, max M:M</p>
+        </article>
+
+        <!-- 7 -->
+        <article class="relation-card">
+            <h3>DOCUMENT ⟷ RECENZIE <small>(DOCUMENT_primește_RECENZIE)</small></h3>
+            <p>Recenziile asociate unui document.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 8 -->
+        <article class="relation-card">
+            <h3>DOCUMENT ⟷ IMPRUMUT_DIGITAL <small>(DOCUMENT_este_imprumutat_IMPRUMUT_DIGITAL)</small></h3>
+            <p>Împrumuturile digitale ale documentelor.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max 1:M</p>
+        </article>
+
+        <!-- 9 -->
+        <article class="relation-card">
+            <h3>DOCUMENT ⟷ EDITURA <small>(DOCUMENT_este_publicat_de_EDITURA)</small></h3>
+            <p>Editura care a publicat documentul.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:1, max M:1</p>
+        </article>
+
+        <!-- 10 -->
+        <article class="relation-card">
+            <h3>DOCUMENT ⟷ CATEGORIE <small>(DOCUMENT_aparține_CATEGORIE)</small></h3>
+            <p>Clasificarea tematică.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:1, max M:M</p>
+        </article>
+
+        <!-- 11 (ternară) -->
+        <article class="relation-card rel-ternara">
+            <h3>DOCUMENT ⟷ REZERVARE ⟷ FILIALA <small>(DOCUMENT_este_rezervat_REZERVARE_la_FILIALA)</small></h3>
+            <p>Unde este rezervat un document fizic.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> M : M : M</p>
+        </article>
+
+        <!-- 12 -->
+        <article class="relation-card">
+            <h3>LISTA_LECTURA ⟷ DOCUMENT <small>(LISTA_LECTURA_conține_DOCUMENT)</small></h3>
+            <p>Documentele dintr-o listă de lectură.</p>
+            <p class="cardinality"><strong>Cardinalitate:</strong> min 1:0, max M:M</p>
+        </article>
+        </div>
+        
+    </section>
+
+    <!-- ===== Diagrama ER ===== -->
+    <section class="db-section" id="diagrama">
+        <div class="container">
+            <h2>Diagrama ER</h2>
+            <div class="diagram-frame">
+            <img src="Poze/Diagrame/Proiect.drawio1_page-0001.jpg" alt="Diagrama ER - TBA" class="diagram-img" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Diagrama Conceptuală ===== -->
+    <section class="db-section" id="diagrama">
+        <div class="container">
+            <h2>Diagrama Conceptuală</h2>
+            <div class="diagram-frame">
+            <img src="Poze/Diagrame/Proiect.drawio1_page-0002.jpg" alt="Diagrama conceptuală - TBA" class="diagram-img" />
+            </div>
+        </div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Biblioteca Online</p>
+  </footer>
+</body>
+</html>

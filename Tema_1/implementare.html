@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Online — Soluții de implementare</title>
+  <link rel="icon" type="image/png" href="Poze/open-book-2.svg" />
+  <link rel="stylesheet" href="implementare.css" />
+  <script defer src="implementare.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="Poze/open-book-2.svg" alt="" class="brand-mark" />
+      <a class="brand-name" href="home.html">Biblioteca Online</a>
+    </div>
+    <nav class="site-nav" aria-label="Navigare principală">
+      <a href="arhitectura.html">Arhitectura</a>
+      <a href="implementare.html" class="active">Soluții de implementare</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. Căutare documente ===== -->
+    <section class="db-section" id="cautare">
+      <div class="container">
+        <h2>1. Căutare documente</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Funcționalitatea de căutare este implementată printr-un modul dedicat de interogare a bazei de date, care permite filtrarea documentelor după <strong>titlu</strong>, <strong>autor</strong>, <strong>categorie tematică</strong> sau <strong>disponibilitate</strong>.</p>
+            <ul>
+              <li>Se utilizează indici pentru câmpurile „titlu” și „autor” pentru a optimiza performanța interogărilor.</li>
+              <li>Utilizatorii pot combina mai multe criterii de căutare (ex. titlu + tematică + format).</li>
+              <li>Rezultatele includ informații despre exemplarele disponibile (filiala, formatul și starea documentului).</li>
+            </ul>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/1/Activitate.png" alt="Căutare documente" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. Rezervare și împrumut ===== -->
+    <section class="db-section" id="rezervare">
+      <div class="container">
+        <h2>2. Rezervare și împrumut</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Fluxul de împrumut se desfășoară în mai multe etape, gestionate prin tabele intermediare pentru <strong>rezervări</strong> și <strong>împrumuturi</strong>:</p>
+            <ul>
+              <li><strong>Cititorul</strong> trimite o cerere de rezervare pentru un document disponibil.</li>
+              <li><strong>Bibliotecarul</strong> validează cererea, moment în care documentul primește statutul „rezervat”.</li>
+              <li>După confirmare, documentul devine „împrumutat”, iar perioada de împrumut este înregistrată automat.</li>
+              <li>La returnare, statusul documentului revine la „disponibil”, iar istoricul este actualizat.</li>
+            </ul>
+            <p>Pentru documentele digitale, procesul se desfășoară automat, sistemul limitând perioada de acces în funcție de politica de împrumut.</p>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/2/Activitate.png" alt="Rezervare și împrumut" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Administrare catalog ===== -->
+    <section class="db-section" id="catalog">
+      <div class="container">
+        <h2>3. Administrare catalog</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Bibliotecarii și administratorii pot gestiona colecția de documente printr-o interfață conectată la baza de date.</p>
+            <ul>
+              <li>Se pot <strong>adauga</strong>, <strong>modifica</strong> sau <strong>șterge</strong> înregistrări din tabelele <code>Documente</code>, <code>Autori</code>, <code>Edituri</code> și <code>Categorii</code>.</li>
+              <li>Fiecare document este asociat cu o filială și un format (fizic/digital), iar sistemul păstrează evidența exemplarelor.</li>
+              <li>Se implementează controale de validare pentru a evita duplicatele și inconsistențele de date.</li>
+            </ul>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/3/Activitate.png" alt="Administrare catalog" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Recenzii și evaluări ===== -->
+    <section class="db-section" id="recenzii">
+      <div class="container">
+        <h2>4. Recenzii și evaluări</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Sistemul permite utilizatorilor autentificați să lase <strong>recenzii</strong> și <strong>evaluări</strong> pentru documentele lecturate.</p>
+            <ul>
+              <li>Fiecare recenzie este stocată într-un tabel separat, legat prin cheie străină de <code>Utilizator</code> și <code>Document</code>.</li>
+              <li>Evaluările (rating-urile) sunt înregistrate numeric și pot fi folosite pentru calculul mediei de apreciere a fiecărui document.</li>
+              <li>Recenziile pot fi moderate de bibliotecari sau administratori.</li>
+            </ul>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/4/Activitate.png" alt="Recenzii și evaluări" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Evenimente și activități ===== -->
+    <section class="db-section" id="evenimente">
+      <div class="container">
+        <h2>5. Evenimente și activități</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Bibliotecarii pot organiza evenimente culturale (cluburi de lectură, lansări de carte, ateliere etc.) în cadrul platformei.</p>
+            <ul>
+              <li>Evenimentele sunt stocate în tabelul <code>Evenimente</code>, cu informații precum titlu, dată, descriere, locație și număr de locuri disponibile.</li>
+              <li>Cititorii pot vizualiza lista evenimentelor și se pot înscrie online.</li>
+              <li>Sistemul actualizează automat lista participanților și notifică utilizatorii în caz de modificări sau anulări.</li>
+            </ul>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/5/Activitate.png" alt="Evenimente și activități" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Gestionare utilizatori ===== -->
+    <section class="db-section" id="utilizatori">
+      <div class="container">
+        <h2>6. Gestionare utilizatori</h2>
+        <div class="impl-flex">
+          <div class="impl-text">
+            <p>Administratorii au acces la module de monitorizare și raportare privind activitatea platformei.</p>
+            <ul>
+              <li>Pot vizualiza statistici în timp real (număr de utilizatori activi, împrumuturi curente, documente populare etc.).</li>
+              <li>Pot gestiona conturile de cititori și bibliotecari (activare, suspendare, resetare parole).</li>
+              <li>Datele sunt centralizate în tabelele <code>Utilizatori</code>, <code>Roluri</code> și <code>LogActivitate</code>, care permit urmărirea acțiunilor efectuate în sistem.</li>
+            </ul>
+          </div>
+          <div class="impl-img">
+            <img src="Poze/6/Activitate.png" alt="Gestionare utilizatori" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Biblioteca Online</p>
+  </footer>
+</body>
+</html>

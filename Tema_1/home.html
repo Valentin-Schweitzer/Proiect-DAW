@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Online</title>
+  <link rel="icon" type="image/png" href="Poze/open-book-2.svg" />
+  <link rel="stylesheet" href="home.css" />
+  <script defer src="home.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="Poze/open-book-2.svg" alt="" class="brand-mark" />
+      <a class="brand-name" href="home.html">Biblioteca Online</a>
+    </div>
+
+    <!-- doar structură pentru viitoarele pagini -->
+    <nav class="site-nav" aria-label="Navigare principală">
+      <a href="arhitectura.html">Arhitectura</a>
+      <a href="implementare.html">Soluții de implementare</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO / INTRO -->
+    <section class="hero" id="acasa">
+      <div class="hero__content">
+        <h1>O bibliotecă aproape de toți</h1>
+        <p>
+          Un loc unde cititorii descoperă titluri noi, rezervă rapid
+          ce îi interesează și împrumută în siguranță. Iar bibliotecarii
+          țin colecțiile vii și aproape de comunitate. <!-- povestea, nu tehnic -->
+        </p>
+        <a class="btn btn-primary" href="#povestea">Află povestea</a>
+      </div>
+    </section>
+
+    <!-- POVESTEA APLICAȚIEI (narativ + flow vizual) -->
+    <section class="story" id="povestea" aria-labelledby="povestea-title">
+    <div class="story-grid">
+        <div class="story-copy">
+        <h2 id="povestea-title">Biblioteca, mai aproape ca oricând</h2>
+        <p>
+            <strong>Biblioteca Online</strong> pornește dintr-o observație simplă:
+            cititorii au timp puțin, dar curiozitate multă. Am creat un loc unde
+            descoperi rapid ce vrei să citești, rezervi în trei atingeri și
+            continui lectura de oriunde—acasă, la bibliotecă, în metrou.
+        </p>
+        <p>
+            Pentru bibliotecari, e calm în culise: colecțiile sunt ordonate,
+            rezervările clare, iar dialogul cu cititorii—natural. Pentru comunitate,
+            înseamnă mai multă lectură, mai puțină așteptare și zero haos.
+        </p>
+        <blockquote class="story-quote">
+            „O bibliotecă bună nu e doar un loc cu cărți — e o promisiune că vei
+            găsi următoarea ta idee preferată.”
+        </blockquote>
+        </div>
+
+        <div class="story-flow" aria-label="Fluxul cititorului">
+        <ol class="flow">
+            <li class="flow-step">
+            <span class="flow-badge">1</span>
+            <h3>Căutare</h3>
+            <p>Filtre rapide după titlu, autor, temă și disponibilitate.</p>
+            </li>
+            <li class="flow-step">
+            <span class="flow-badge">2</span>
+            <h3>Rezervare</h3>
+            <p>Blocarea exemplarului dorit—fără telefon, fără cozi.</p>
+            </li>
+            <li class="flow-step">
+            <span class="flow-badge">3</span>
+            <h3>Împrumut</h3>
+            <p>Ridicare la ghișeu sau acces instant la format digital.</p>
+            </li>
+            <li class="flow-step">
+            <span class="flow-badge">4</span>
+            <h3>Returnare</h3>
+            <p>Notificări blânde, istoric clar, totul la un clic distanță.</p>
+            </li>
+        </ol>
+        </div>
+    </div>
+    </section>
+
+    <!-- ROLURI (carduri expresive) -->
+    <section class="roles" aria-labelledby="roles-title">
+    <h2 id="roles-title">Cine folosește aplicația</h2>
+    <div class="role-grid">
+        <article class="role-card">
+        <div class="role-icon" aria-hidden="true">👤</div>
+        <h3>Cititor</h3>
+        <p>Cont personal, recomandări fresh, rezervări rapide și acces legal
+            la resurse digitale. Istoric, liste de dorințe și progres de lectură.</p>
+        <ul class="role-benefits">
+            <li>Rezervi în <em>&lt;30s</em></li>
+            <li>Notificări inteligente</li>
+            <li>Listă „De citit”</li>
+        </ul>
+        </article>
+
+        <article class="role-card">
+        <div class="role-icon" aria-hidden="true">📚</div>
+        <h3>Bibliotecar</h3>
+        <p>Inventar la zi, rezervări clare și împrumuturi/returnări înregistrate
+            fără efort. Mesaje către cititori direct din aplicație.</p>
+        <ul class="role-benefits">
+            <li>Gestionare exemplare</li>
+            <li>Fluxuri fără hârtii</li>
+            <li>Log complet de acțiuni</li>
+        </ul>
+        </article>
+
+        <article class="role-card">
+        <div class="role-icon" aria-hidden="true">🛡️</div>
+        <h3>Administrator</h3>
+        <p>Politici de împrumut, permisiuni pe roluri și tablouri de bord cu
+            activitate, tendințe și cerere pe categorii.</p>
+        <ul class="role-benefits">
+            <li>Control granular</li>
+            <li>Audit & rapoarte</li>
+            <li>Scalabil pe filiale</li>
+        </ul>
+        </article>
+    </div>
+    </section>
+
+    <!-- PROMISIUNEA / SCOP (grid cu „check”) -->
+    <section class="goals" aria-labelledby="goals-title">
+    <h2 id="goals-title">Ce promitem comunității</h2>
+    <div class="goal-grid">
+        <div class="goal">
+        <span class="goal-check" aria-hidden="true">✓</span>
+        Simplificăm rezervările și împrumuturile.
+        </div>
+        <div class="goal">
+        <span class="goal-check" aria-hidden="true">✓</span>
+        Creștem accesul la resurse tipărite și digitale.
+        </div>
+        <div class="goal">
+        <span class="goal-check" aria-hidden="true">✓</span>
+        Unificăm activitatea bibliotecii într-un singur loc.
+        </div>
+        <div class="goal">
+        <span class="goal-check" aria-hidden="true">✓</span>
+        O experiență de citire plăcută, clară și inclusivă.
+        </div>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Biblioteca Online</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root{
+  --bg: #FFF7ED;
+  --text: #3B2418;
+  --muted: #7D4B2A;
+  --brand: #C65D3B;
+  --brand-2: #A65E2E;
+  --card: #E6CBA8;
+  --ring: rgba(198,93,59,.15);
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header{
+  position: sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+  background:#fff; border-bottom:1px solid #E0C9AA;
+  backdrop-filter:saturate(150%) blur(6px);
+}
+.brand{ display:flex; align-items:center; gap:.6rem; }
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: inline-block;
+}
+.brand-name{ font-weight:800; text-decoration:none; color:var(--text); }
+.site-nav a{
+  color:var(--muted); text-decoration:none; margin-left:16px; padding:6px 10px; border-radius:10px;
+}
+.site-nav a:hover,
+.site-nav a.active{
+  background:var(--card); color:var(--text);
+}
+
+/* Generic section */
+.db-section{
+  padding:80px 18px;
+  background:#fff;
+  border-bottom:1px solid #E0C9AA;
+}
+.db-section:nth-child(even){ background:#FFF6EB; }
+
+.container{ max-width:1000px; margin:0 auto; }
+
+.db-section h2{
+  font-size:clamp(1.6rem,2.8vw,2rem);
+  margin:0 0 18px;
+}
+.tba{ color:var(--muted); font-style:italic; }
+
+/* Role cards */
+.role-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+.role-card{
+  background:linear-gradient(180deg,#ffffff 0%,#FFF3E6 100%);
+  border:1px solid #E3CFAE;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 24px -20px rgba(2,6,23,.15);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.role-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 36px -22px rgba(2,6,23,.35);
+}
+
+/* Permite gridului să iasă din container și să ocupe toată lățimea ecranului */
+.roles .role-grid {
+  width: 97%;              /* ocupă 90% din ecran */
+  max-width: none;         /* elimină limitarea containerului */
+  margin: 0 auto;          /* centrează gridul orizontal */
+  padding: 0;              /* elimină eventual padding rezidual */
+}
+
+/* Ajustează vizual spațierea secțiunii */
+.roles {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: #fff;
+}
+
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #E0C9AA;
+  padding:24px 18px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ===== Entități ===== */
+.entity-grid{
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 24px;
+}
+
+.entity-card{
+  background: linear-gradient(180deg, #ffffff 0%, #FFF3E6 100%);
+  border: 1px solid #E3CFAE;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px -20px rgba(2,6,23,.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.entity-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -22px rgba(2,6,23,.3);
+}
+.entity-card h3{
+  margin-top:0;
+  color: var(--brand-2);
+  font-size: 1.05rem;
+}
+.entity-card p{
+  margin: 6px 0;
+  color: var(--text);
+}
+.entity-card .key{
+  font-style: italic;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ===== Relațiile ===== */
+.relation-list{
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 24px;
+}
+
+.relation-card{
+  background: linear-gradient(180deg, #ffffff 0%, #FFF3E6 100%);
+  border: 1px solid #E3CFAE;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px -20px rgba(2,6,23,.15);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.relation-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -22px rgba(2,6,23,.30);
+  border-color: #D8BA8D;
+}
+
+.relation-card h3{
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  color: var(--brand-2);
+  letter-spacing: -.01em;
+}
+.relation-card h3 small{
+  font-weight: 600; opacity: .7; margin-left: 6px;
+}
+
+.relation-card p{ margin: 6px 0; color: var(--text); }
+.relation-card .cardinality{
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Badge discret pentru relații ternare */
+.rel-ternara{
+  position: relative;
+}
+.rel-ternara::before{
+  content: "3-ary";
+  position: absolute; top: 12px; right: 12px;
+  font-size: .72rem; font-weight: 700;
+  padding: 4px 8px; border-radius: 999px;
+  background: #F4E4CD; color: #7D4B2A; border:1px solid #E6CBA8;
+}
+
+
+#relatii .relation-list {
+  width: 83%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+
+  display: grid;
+  gap: 18px;
+
+  /* ✅ max 3 pe linie */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1300px; /* opțional, limitează lățimea totală */
+}
+
+
+/* ===== Diagrama Conceptuală ===== */
+#diagrama .container {
+  max-width: 1100px;
+}
+
+.diagram-frame {
+  margin-top: 32px;
+  background: #fff;
+  border: 2px solid #E3CFAE;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px -20px rgba(2,6,23,.15);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.diagram-img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #E0C9AA;
+  box-shadow: 0 10px 24px -22px rgba(2,6,23,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.diagram-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 36px -22px rgba(2,6,23,.3);
+}
+
+#diagrama .tba {
+  margin-top: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
